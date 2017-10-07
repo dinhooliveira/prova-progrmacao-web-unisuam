@@ -1,0 +1,136 @@
+<html>
+<head>
+<script type="text/javascript">
+function calculaTotal(){
+if(document.getElementById("bolado").checked)
+document.getElementById("valor_total").value = 10 * document.getElementById("ingresso").value;
+else
+document.getElementById("valor_total").value = 5 * document.getElementById("ingresso").value;
+}
+
+function enviar()
+{
+   var nome = document.getElementById("nome");
+   var qtde = document.getElementById("ingresso");
+   if(!validaPreenchido(nome.value))
+   {
+    alert("O campo nome deve ser preenchido");
+    nome.focus();
+   }else if(!validaPreenchido(qtde.value)){
+       alert("A quantidade deve ser preenchida");
+       qtde.focus();
+   }else if( validaPancadao() <3){
+       alert("Pelo menos 3 opções de pancadões devem ser preenchidas");
+   }else{
+      var total = document.getElementById("valor_total").value;
+      var resultado = confirm("O valor da compra é de R$ " + total+ ",00 tem certeza que quer comprar " + qtde.value + " ingressos" );
+          if(resultado)
+		      document.formulario.submit();
+	  
+   }
+   
+   
+   
+}
+
+function validaPreenchido(valor){
+if(valor==null || valor=="")
+return false;
+else
+return true;
+}
+
+function validaPancadao()
+{
+ var cont =0;
+  if(document.getElementById("pc1").checked) cont++;
+  if(document.getElementById("pc2").checked) cont++;
+  if(document.getElementById("pc3").checked) cont++;
+  if(document.getElementById("pc4").checked) cont++;
+  return cont;
+}
+
+function limpar(){
+ document.getElementById("bolado").checked =false;
+ document.getElementById("novinha").checked =false;
+ document.getElementById("nome").value ="";
+ document.getElementById("ingresso").value = "";
+ document.getElementById("valor_total").value ="";
+ document.getElementById("pc1").checked=false;
+ document.getElementById("pc2").checked=false;
+ document.getElementById("pc3").checked=false;
+ document.getElementById("pc4").checked=false;
+}
+</script>
+</head>
+<body>
+<form name="formulario" method="get" action="https://www.unisuam.edu.br/" >
+<table align="center" border="2px" >
+<thead>
+<tr >
+<th  bgcolor="#ccccff" colspan="3"><h1 align='center'>PANCADÃO DA A1</h1></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="5"><img src="pancadao.jpg"></td>
+</tr>
+<tr>
+<td bgcolor="#0099ff">Qual seu nome</td>
+<td bgcolor="#ccccff"><input type="text" id="nome"></td>
+</tr>
+<tr>
+<td bgcolor="#0099ff">O que você é ?</td>
+<td  bgcolor="#ccccff">
+<input type="radio" name="quem" id="bolado" onclick="calculaTotal()">Bolado 
+<input type="radio" name="quem" id="novinha" onclick="calculaTotal()">Novinha 
+</td>
+</tr>
+<tr>
+<td bgcolor="#0099ff">Quantos ingressos você deseja ?</td>
+<td bgcolor="#ccccff">
+<select width="200px" id="ingresso" onclick="calculaTotal()">
+<option value="">--</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
+</tr>
+<tr>
+<td bgcolor="#0099ff">Quais seus pancadões prediletos?</td>
+<td bgcolor="#ccccff">
+<input type="checkbox" id="pc1" >MC Kevinho - djbk<br>
+<input type="checkbox" id="pc2">Dani Russo<br>
+<input type="checkbox" id="pc3">MC g 15 - deu onda<br>
+<input type="checkbox" id="pc4">MC Lan<br>
+</td>
+</tr>
+<tr>
+<td bgcolor="#ccccff">
+Aê galera, cada ingresso custa R$ 10,00 para bolados<br>
+e apenas R$ 5,00 para novinhas. Mulher bonita não<br>
+paga, mas também não leva. Adquira já seu ingresso.<br>
+</td>
+<td bgcolor="#0099ff">Valor Total</td>
+<td bgcolor="#ccccff">R$ <input type="text" id="valor_total">,00</td>
+</tr>
+<tr>
+<td  colspan="3" bgcolor="#ccccff">
+<div style="margin:15px; float:right">
+<input type="button"  value="Enviar Solicitação" onclick="enviar()"> 
+<input type="button" value="Limpar campos" onclick="limpar()">
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="3" bgcolor="#0099ff" align="center"> Copyrigtht © em seu site 2017</td>
+</tr>
+</tbody>
+
+</table>
+</form>
+</body>
+</html>
