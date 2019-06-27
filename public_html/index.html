@@ -1,5 +1,6 @@
 <html>
 <head>
+	<meta charset="UTF-8"/>
 <script type="text/javascript">
 function calculaTotal(){
 if(document.getElementById("bolado").checked)
@@ -20,10 +21,10 @@ function enviar()
        alert("A quantidade deve ser preenchida");
        qtde.focus();
    }else if( validaPancadao() <3){
-       alert("Pelo menos 3 opções de pancadões devem ser preenchidas");
+       alert("Pelo menos 3 opÃ§Ãµes de pancadÃµes devem ser preenchidas");
    }else{
       var total = document.getElementById("valor_total").value;
-      var resultado = confirm("O valor da compra é de R$ " + total+ ",00 tem certeza que quer comprar " + qtde.value + " ingressos" );
+      var resultado = confirm("O valor da compra Ã© de R$ " + total+ ",00 tem certeza que quer comprar " + qtde.value + " ingressos" );
           if(resultado)
 		      document.formulario.submit();
 	  
@@ -68,7 +69,7 @@ function limpar(){
 <table align="center" border="2px" >
 <thead>
 <tr >
-<th  bgcolor="#ccccff" colspan="3"><h1 align='center'>PANCADÃO DA A1</h1></th>
+<th  bgcolor="#ccccff" colspan="3"><h1 align='center'>PANCADÃƒO DA A1</h1></th>
 </tr>
 </thead>
 <tbody>
@@ -80,14 +81,14 @@ function limpar(){
 <td bgcolor="#ccccff"><input type="text" id="nome"></td>
 </tr>
 <tr>
-<td bgcolor="#0099ff">O que você é ?</td>
+<td bgcolor="#0099ff">O que vocÃª Ã© ?</td>
 <td  bgcolor="#ccccff">
 <input type="radio" name="quem" id="bolado" onclick="calculaTotal()">Bolado 
 <input type="radio" name="quem" id="novinha" onclick="calculaTotal()">Novinha 
 </td>
 </tr>
 <tr>
-<td bgcolor="#0099ff">Quantos ingressos você deseja ?</td>
+<td bgcolor="#0099ff">Quantos ingressos vocÃª deseja ?</td>
 <td bgcolor="#ccccff">
 <select width="200px" id="ingresso" onclick="calculaTotal()">
 <option value="">--</option>
@@ -100,7 +101,7 @@ function limpar(){
 </td>
 </tr>
 <tr>
-<td bgcolor="#0099ff">Quais seus pancadões prediletos?</td>
+<td bgcolor="#0099ff">Quais seus pancadÃµes prediletos?</td>
 <td bgcolor="#ccccff">
 <input type="checkbox" id="pc1" >MC Kevinho - djbk<br>
 <input type="checkbox" id="pc2">Dani Russo<br>
@@ -110,9 +111,9 @@ function limpar(){
 </tr>
 <tr>
 <td bgcolor="#ccccff">
-Aê galera, cada ingresso custa R$ 10,00 para bolados<br>
-e apenas R$ 5,00 para novinhas. Mulher bonita não<br>
-paga, mas também não leva. Adquira já seu ingresso.<br>
+AÃª galera, cada ingresso custa R$ 10,00 para bolados<br>
+e apenas R$ 5,00 para novinhas. Mulher bonita nÃ£o<br>
+paga, mas tambÃ©m nÃ£o leva. Adquira jÃ¡ seu ingresso.<br>
 </td>
 <td bgcolor="#0099ff">Valor Total</td>
 <td bgcolor="#ccccff">R$ <input type="text" id="valor_total">,00</td>
@@ -120,13 +121,13 @@ paga, mas também não leva. Adquira já seu ingresso.<br>
 <tr>
 <td  colspan="3" bgcolor="#ccccff">
 <div style="margin:15px; float:right">
-<input type="button"  value="Enviar Solicitação" onclick="enviar()"> 
+<input type="button"  value="Enviar SolicitaÃ§Ã£o" onclick="enviar()"> 
 <input type="button" value="Limpar campos" onclick="limpar()">
 </div>
 </td>
 </tr>
 <tr>
-<td colspan="3" bgcolor="#0099ff" align="center"> Copyrigtht © em seu site 2017</td>
+<td colspan="3" bgcolor="#0099ff" align="center"> Copyrigtht Â© em seu site 2017</td>
 </tr>
 </tbody>
 
